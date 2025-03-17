@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from flask_cors
+from flask_cors import CORS
 import mysql.connector
 import os
 from dotenv import load_dotenv
