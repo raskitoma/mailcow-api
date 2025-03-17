@@ -22,7 +22,7 @@ def get_user_data(username_email):
         connection = mysql.connector.connect(**DB_CONFIG)
         cursor = connection.cursor(dictionary=True)
 
-        query = "SELECT user_id, username, preferences FROM mailcow_rc1users WHERE username = %s"
+        query = "SELECT user_id, username, preferences FROM mailcow_rc1users WHERE username='%s'"
         cursor.execute(query, (username_email,))
         result = cursor.fetchone()
 
