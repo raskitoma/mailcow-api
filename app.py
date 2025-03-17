@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from flask_cors
 import mysql.connector
 import os
 from dotenv import load_dotenv
@@ -10,6 +11,12 @@ sys.stdout.reconfigure(line_buffering=True)
 load_dotenv()
 
 app = Flask(__name__)
+
+# Enable CORS for all domains on all routes
+CORS(app)  # Allows requests from any domain
+
+# If you want to allow specific origins only, use:
+# CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Database Configuration from .env
 DB_CONFIG = {
